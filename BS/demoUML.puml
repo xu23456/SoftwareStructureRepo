@@ -1,0 +1,40 @@
+@startuml
+class Main {
+~ {static} List<Contact> contacts
++ {static} void main(String[])
+}
+
+
+class Main$Contact {
+~ String name
+~ String address
+~ String phoneNumber
+}
+
+class EditHandler {
++ void handle(HttpExchange)
+- Map<String,String> getParams(String)
+}
+
+class ViewHandler {
++ void handle(HttpExchange)
+}
+
+class AddHandler {
++ void handle(HttpExchange)
+- Map<String,String> queryToMap(String)
+}
+
+class DeleteHandler {
++ void handle(HttpExchange)
+- String getNameToDelete(String)
+}
+
+
+
+Main +.. Main$Contact
+com.sun.net.httpserver.HttpHandler <|.. EditHandler
+com.sun.net.httpserver.HttpHandler <|.. ViewHandler
+com.sun.net.httpserver.HttpHandler <|.. AddHandler
+com.sun.net.httpserver.HttpHandler <|.. DeleteHandler
+@enduml

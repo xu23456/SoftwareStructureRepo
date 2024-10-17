@@ -1,0 +1,36 @@
+@startuml
+class Person {
+- String name
+- String address
+- String number
++ String getName()
++ void setName(String)
++ String getAddress()
++ void setAddress(String)
++ String getNumber()
++ void setNumber(String)
++ String toString()
+}
+
+
+class Client3 {
++ {static} void main(String[])
+}
+
+class DataServer {
++ void systemInit(LogicServer)
++ void displayPerson()
++ void writePerson(LogicServer)
+}
+
+class LogicServer {
+- List<Person> persons
++ List<Person> getPersons()
++ void addPerson(Person)
++ void editPerson(int,Person)
++ void deletePerson(int)
++ Person getPerson(int)
+}
+
+
+@enduml

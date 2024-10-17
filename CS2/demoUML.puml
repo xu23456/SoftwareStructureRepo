@@ -1,0 +1,32 @@
+@startuml
+class Person {
+- String name
+- String address
+- String number
++ String getName()
++ void setName(String)
++ String getAddress()
++ void setAddress(String)
++ String getNumber()
++ void setNumber(String)
++ String toString()
+}
+
+
+class Server {
+- List<Person> persons
++ void addPerson(Person)
++ void editPerson(int,Person)
++ void deletePerson(int)
++ Person getPerson(int)
++ void systemInit()
++ void displayPerson()
++ void writePerson()
+}
+
+
+class Client2 {
++ {static} void main(String[])
+}
+
+@enduml
